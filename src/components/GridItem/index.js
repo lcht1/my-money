@@ -10,6 +10,7 @@ const GridItem = ({ item, onDelete }) => {
     return (
         <Tr>
             <Td>{item.desc}</Td>
+            <Td>{item.category}</Td>
             <Td>R$ {item.amount}</Td>
             <Td alignCenter>
                 {item.expense ? (

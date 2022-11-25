@@ -1,20 +1,37 @@
 import styled from "styled-components";
 
-export const Container = styled.main`
-    width: 60%;
+export const Container = styled.div`
     margin: 0 auto;
     padding: 5rem 0 2rem 0;
     display: grid;
     gap: 20px;
-    max-width: 1080px;
+    max-width: 60%;
     color: #787878;
+
+    svg {
+        cursor: pointer;
+    }
 `;
 
-export const GeneralInfos = styled.div`
+export const ShowCharts = styled.p`
+    cursor: pointer;
     display: flex;
-    justify-content: space-between;
+    width: 100%;
+    justify-content: flex-end;
+    text-decoration: underline;
+    font-size: 13px;
+`;
 
+export const ChartsContainer = styled.div`
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    background-color: transparent;
+`;
+export const GeneralInfos = styled.div`
     gap: 15px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
 `;
 
 export const Box = styled.div`
@@ -22,6 +39,8 @@ export const Box = styled.div`
     flex-direction: row;
     align-items: center;
     background-color: #fff;
+    width: 100%;
+    min-width: 200px;
 
     .transactions {
         cursor: pointer;
@@ -53,7 +72,7 @@ export const Balance = styled.div`
     box-shadow: 0 14px 21px 0 rgb(0 0 0 / 6%);
     border-radius: 0.25rem;
     padding: 1rem;
-    width: 300px;
+    width: 20rem;
     position: relative;
 
     .income {

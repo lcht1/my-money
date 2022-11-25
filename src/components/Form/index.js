@@ -8,25 +8,39 @@ import {
     Button,
     RadioGroup,
     Input,
+    CategoryOptions,
     Wrapper,
 } from "./styles";
 
 const Form = ({ handleAdd, transactionsList, setTransactionsList }) => {
     const [description, setDescription] = useState("");
+    const [category, setCategory] = useState("");
     const [amount, setAmount] = useState("");
     const [isExpense, setIsExpense] = useState(false);
 
+    const categories = [
+        "Salário",
+        "Dividendos",
+        "Alimentação",
+        "Casa",
+        "Transporte",
+        "Lazer",
+        "Saúde",
+    ];
+
+    console.log(category);
     const generateID = () => Math.round(Math.random() * 1000);
 
     const handleSave = () => {
-        if (!description || !amount) {
-            alert("Informe a descrição e o valor!");
+        if (!description || !amount || !category) {
+            alert("Todos os campos devem ser preenchidos ");
             return;
         }
 
         const transaction = {
             id: generateID(),
             desc: description,
+            category: category,
             amount: amount,
             expense: isExpense,
         };
@@ -35,6 +49,7 @@ const Form = ({ handleAdd, transactionsList, setTransactionsList }) => {
 
         setDescription("");
         setAmount("");
+        setCategory("");
     };
 
     return (
@@ -48,6 +63,25 @@ const Form = ({ handleAdd, transactionsList, setTransactionsList }) => {
                             onChange={(e) => setDescription(e.target.value)}
                             placeholder="ex: Aluguel da casa"
                         />
+                    </InputContent>
+                    <InputContent>
+                        <Label>Categoria</Label>
+                        <CategoryOptions
+                            value={category}
+                            onChange={(e) => setCategory(e.target.value)}
+                        >
+                            <option value="">Selecione</option>
+                            {categories.map((category) => (
+                                <option
+                                    value={category}
+                                    onChange={(e) =>
+                                        setCategory(e.target.value)
+                                    }
+                                >
+                                    {category}
+                                </option>
+                            ))}
+                        </CategoryOptions>
                     </InputContent>
                     <InputContent>
                         <Label>Valor (R$)</Label>

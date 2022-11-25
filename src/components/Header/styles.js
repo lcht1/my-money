@@ -16,23 +16,17 @@ export const Content = styled.div`
         display: flex;
         align-items: center;
         gap: 20px;
+    }
+`;
 
-        a {
-            cursor: pointer;
-            text-decoration: none;
-            color: inherit;
-            display: block;
-            transition: all 2s;
-
-            :hover {
-                :after {
-                    content: "";
-                    display: block;
-                    height: 2px;
-                    width: 100%;
-                    background-color: #fff;
-                }
-            }
-        }
+export const Logo = styled.div`
+    a {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        cursor: pointer;
+        text-decoration: none;
+        color: inherit;
+        transition: all 2s;
     }
 `;

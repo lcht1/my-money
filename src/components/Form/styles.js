@@ -9,7 +9,7 @@ export const Container = styled.div`
     padding: 20px;
     box-shadow: 0px 0px 5px #ccc;
     border-radius: 5px;
-    max-width: 1080px;
+    max-width: 60%;
     margin: 20px auto;
 `;
 
@@ -44,6 +44,17 @@ export const Input = styled.input`
     padding: 5px 10px;
     font-size: 15px;
     border: 1px solid #ccc;
+    color: #787878;
+`;
+
+export const CategoryOptions = styled.select`
+    outline: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    background: transparent;
+    color: #787878;
 `;
 
 export const RadioGroup = styled.div`
